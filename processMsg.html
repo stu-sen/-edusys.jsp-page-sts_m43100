@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)https://stu.sen.go.kr/processMsg.html?param=%c3%b3%b8%ae%c1%df&postfix=16115515613756405.23775634177 -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>loading</title>
+	<script type="text/javascript">
+
+		function init(){
+			try {
+				var prsMsg = parent.WebSquare.layer.processMsg;
+				document.getElementById("processMsgLayer").innerHTML = prsMsg;
+
+				if( window.processKey ) {
+					clearInterval( window.processKey );
+				}
+
+				window.processKey = setInterval( function(){ setColor() } , 500 );
+			} catch(e) {}
+		}
+
+		window.onload = init;
+
+		var colorArr = [ "#3473ae","#EEEEEE" ];
+		function setColor(){
+			var color = colorArr.shift();
+			colorArr.push(color);
+			document.getElementById("processMsgLayer").style.color = color;
+		}
+
+    </script>
+	<style type="text/css">
+	body {margin:0px; padding:0;}
+	.ly_loading {overflow:hidden; padding:0px 0; border:0px solid #999; text-align:center;width:248px;height:105px;position:relative;background-color:none;}
+	.ly_loading .pro_loading {height:20px;font-size:13px; color:#3473ae; font-weight:bold;position:absolute;top:78px; left:25px; width:200px;text-align:center;}
+	</style>
+</head>
+<body>
+	<div class="ly_loading">
+		<div id="processMsgLayer" class="pro_loading" style="color: rgb(238, 238, 238);">처리중</div>
+		<img src="./progressBar.gif" width="248px" height="105px" class="loading_bar" alt="로딩중">
+	</div>
+
+
+</body></html>
