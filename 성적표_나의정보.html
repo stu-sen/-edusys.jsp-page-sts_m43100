@@ -1,0 +1,2812 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="textension/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+
+<!--원클릭 변수선언-->
+
+
+
+
+
+<!--교육비 원클릭 신청 시스템 2016.12.12-->
+
+
+
+
+<!-- 베라포트: 공통 -->
+<script type="text/javascript">//_SITE_SystemLang="ENG";</script>
+<script type="text/javascript">_SITE_CreateObject=false;</script>
+<!-- script type="text/javascript" src="../jquery/json_parse.js?20120620"></script -->
+<script type="text/javascript" src="/plugincheck/veraport/veraport20.js?20140228"></script>               <!-- 베라포트공통JS -->
+<!-- 베라포트: 통합설치용 -->
+<script type="text/javascript" src="/plugincheck/veraport/install20/install_internal.js?20140812"></script>            <!-- 통합설치공통JS -->
+<script type="text/javascript" src="/plugincheck/veraport/install20/install_config.js?20140812"></script>              <!-- 통합설치설정JS -->
+
+<script type="text/javascript">
+<!--
+		var veraInstallUrl = "http://"+ "www.neis.go.kr" + "/wizvera/veraport/install20/install.html";
+//-->
+</script>
+
+
+<title>로그인</title>
+
+
+
+
+
+
+
+	
+	
+		
+	
+	
+
+
+	
+		
+	
+
+
+<!--회원마당 메뉴의 경우 returnPage 가 셋팅되어 있지 않다면 오류처리함-->
+
+	
+
+
+
+
+
+
+
+	
+		
+	
+
+<link href="/css/flash.css" rel="stylesheet" type="text/css" />
+<link href="/css/simplemodal.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/renew/css/default.css" />
+
+<link rel="stylesheet" type="text/css" href="/renew/css/common.css" />
+
+<!-- 신규 총괄 css 2015.02 -->
+<link rel="stylesheet" type="text/css" href="/css/neo_common.css" />
+
+<link rel="stylesheet" type="text/css" href="/css/nsg/nsg_member.css" />
+
+<script type="text/javascript" src="/renew/js/jquery-1.8.3.min.js"></script>
+<!-- script type="text/javascript" src="/jquery/jquery-1.4.2.min.js"></script -->
+<script type="text/javascript" src="/renew/js/jquery-ui-1.8.5.min.js"></script>
+<script type="text/javascript" src="/renew/js/common.js"></script>
+<script type="text/javascript" src="/renew/js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="/js/quickpager.mod.jquery.js"></script>
+<script type="text/javascript" src="/jquery/validate/jquery.validate.js"></script>
+<script type="text/javascript" src="/jquery/validate/messages_kr.js"></script>
+<script type="text/javascript" src="/jquery/validate/neis_validate_extension.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/neo_jquery.bpopup.min.js"></script>
+<!-- 대국민서비스 공통 -->
+<script type="text/javascript" src="/js/zoom.js"></script>
+<script type="text/javascript" src="/js/pasconstants.js"></script>
+<script type="text/javascript" src="/js/paswebcript.js"></script>
+<script type="text/javascript" src="/js/jquery.simplemodal.js"></script>
+<script type="text/javascript" src="/js/linkscript.js"></script>
+
+<!-- 신규 js 2015.02 -->
+<script type="text/javascript" src="/js/neo_menu.js"></script>
+<script type="text/javascript" src="/js/neo_jquery-ui-1.8.5.min.js"></script>
+
+
+	
+	
+		
+	
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+	function createWebParamsinForm(formObjId) {
+		
+			
+				$(formObjId).append("<input type='hidden' id='domainCode' name='domainCode' value='A00' />");
+			
+		
+			
+				$(formObjId).append("<input type='hidden' id='returnBiz' name='returnBiz' value='STS' />");
+			
+		
+			
+				$(formObjId).append("<input type='hidden' id='returnDomain' name='returnDomain' value='B10' />");
+			
+		
+			
+				$(formObjId).append("<input type='hidden' id='reqAuthLevel' name='reqAuthLevel' value='AUTCE' />");
+			
+		
+			
+				$(formObjId).append("<input type='hidden' id='returnPage' name='returnPage' value='sts_com_mm00_001.do' />");
+			
+		
+	}
+
+  function initAtptOfcdcScCombo(formObjId) {
+  	
+     	
+     	
+     		
+     			
+     		
+     		
+   		
+     	
+     		
+     			
+     		
+     		
+     	
+   		$(formObjId).append("<option value=A00 selected>대국민서비스통합창구</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=B10>서울특별시교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=C10>부산광역시교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=D10>대구광역시교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=E10>인천광역시교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=F10>광주광역시교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=G10>대전광역시교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=H10>울산광역시교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=I10>세종특별자치시교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=J10>경기도교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=K10>강원도교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=M10>충청북도교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=N10>충청남도교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=P10>전라북도교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=Q10>전라남도교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=R10>경상북도교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=S10>경상남도교육청</option>");
+  	
+     	
+     	
+     		
+     		
+	     		
+     		
+   		
+     	
+     		
+     		
+	     		
+     		
+     	
+   		$(formObjId).append("<option value=T10>제주특별자치도교육청</option>");
+  	
+	}
+
+	//총괄에서 회원마당메뉴간 이동시 returnDomain, returnBiz, returnPage 값을 유지시킴
+	//returnDomain 은 parameter(returnDomain), 로그인사용자의 기본 시/도 교육청, Cookie 의 시/도 정보,  B10 순으로 우선 순위를 가진다
+	function goLink(url){
+
+
+		var f = document.paramForm;
+/*
+		var v  = f.returnDomain.value;
+
+		if(v == null ||  v.length != 3 ){
+			v = "";
+		}
+
+		if(v == null ||  v.length != 3 ){
+			v = $.cookie("lastDomainCode");
+		}
+
+		if(v == null ||  v.length != 3 ){
+			v = "B10";
+		}
+
+		f.returnDomain.value = v;
+*/
+		f.action = url;
+
+		f.submit();
+	}
+
+//]]>
+</script>
+
+	
+		
+	
+		
+			<!--link rel="stylesheet" type="text/css" href="" / -->
+			
+			
+			
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+
+
+<style type="text/css">
+.skipMenu{
+	overflow:hidden;
+	position:relative;
+	width:100%;
+	z-index:2;
+}
+.skipMenu a{
+	display:block;
+	font-size:0;
+	height:1px;
+	line-height:0;
+	margin:0 -1px -1px 0;
+	overflow:hidden;
+	text-align:center;
+	width:100%;
+	}
+.skipMenu a:focus, .skipMenu a:hover, .skipMenu a:active {
+	background:#000;
+	color:#fff;
+	font-size:12px;
+	font-weight:bold;
+	margin:0;
+	height:20px;
+	line-height:20px;
+	margin:0;
+}
+</style>
+
+</head>
+
+
+	
+	
+		<body>
+	
+
+
+<!-- [필수]베라포트: 설치 확인 및 모듈 로딩/START-->
+<div id="VP_object_load"></div>
+<!-- [필수]베라포트: 설치 확인 및 모듈 로딩/END -->
+<form name="paramForm" method="post" action="">
+
+	
+	
+    <input type="hidden" name="returnDomain" value="B10" />
+	
+
+    <input type="hidden" name="returnBiz" value="STS" />
+    <input type="hidden" name="returnPage" value="sts_com_mm00_001.do" />
+
+	
+	
+    <input type="hidden" name="domainCode" value="B10" />
+	
+
+    <input type="hidden" name="stepValue" value="" />
+</form>
+
+		
+			
+        		
+                	
+						<div id="neo_wrap" class="neo_sub neo_sts neo_log_out">
+					
+                	
+        		
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+$(function(){
+	window.onload = function() {
+		
+	}
+
+});
+
+
+function getRestoreTime(){
+
+	var curTime = new Date().getTime();
+
+	$.ajax({
+     type : "GET",
+     data : {
+		curTime : curTime
+	 },
+	 dataType : "text",
+     url : "/getRestoreTime.jsp",
+
+     success : function(result) {
+
+		 if(result.trim() == ""){  //서버에 시간정보가 없어서 셋팅함
+			SetCookie( "ses_login_time", curTime );
+
+		 }else{
+			//서버에 시간정보를 가져옴
+			 if( !isNaN( result.trim() ) &&  result.trim()!="" ){
+				 //서버의 시간정보 가져옴
+				SetCookie( "ses_login_time", result.trim() );
+			 }
+		 }
+			time_display();
+
+     },
+
+     error : function(request, status, error) {
+//		alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+     }
+
+    });
+
+}
+
+
+
+function setRestoreTime(){
+
+	var curTime = new Date().getTime();
+
+	$.ajax({
+     type : "GET",
+     data : {
+		curTime : curTime
+	 },
+	 dataType : "text",
+     url : "/setRestoreTime.jsp",
+
+     success : function(result) {
+		SetCookie( "ses_login_time", curTime );
+		time_display();
+     },
+
+     error : function(request, status, error) {
+//		alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+     }
+
+    });
+}
+
+
+
+	//세션타임아웃관리
+
+function GetCookie(cKey) {
+    var allcookies = document.cookie;
+    var cookies = allcookies.split("; ");
+    for (var i = 0; i < cookies.length; i++) {
+        var keyValues = cookies[i].split("=");
+        if (keyValues[0] == cKey) {
+            return unescape(keyValues[1]);
+        }
+    }
+    return "";
+}
+
+function SetCookie(cKey, cValue)  // name,pwd
+{
+    document.cookie = cKey + '=' + escape(cValue);
+}
+
+
+
+var base_time = 3599
+
+function time_display(){
+
+	var ses_login_time = GetCookie("ses_login_time");
+
+	if( isNaN(ses_login_time) || ses_login_time == ""){
+		getRestoreTime();
+		return;
+	}
+
+	var elapsed_time =  new Date().getTime() - ses_login_time;
+
+
+	var left_time = base_time - parseInt(  elapsed_time / 1000 );
+	var temp_min = parseInt( left_time / 60 );
+	var second = left_time % 60;
+	var hour = parseInt( temp_min / 60 );
+	var minute = temp_min % 60;
+//	var value = hour +" 시간 "+minute+" 분 "+second+" 초" ;
+	if(minute < 10 ){
+		minute = "0"+minute;
+	}
+
+	if(second < 10 ){
+		second = "0"+second;
+	}
+
+	var value = minute+" : "+second;
+
+	document.all.em_time_left.innerHTML = value;
+	document.all.em_left_secode.innerHTML = left_time;
+
+	if( left_time < 300 ){
+
+		if( GetCookie("ses_auto_popup") != "YES" ){
+			timer_layerpopup();
+		}
+
+	}
+
+	//시간만료됨, 로그아웃 실행
+	if( left_time <= 0 ){
+		location.href = "/pas_mms_li00_003.do";
+		return;
+	}
+
+	setTimeout( time_display, 1000 );
+}
+
+
+function time_display_init(){
+
+	var cookie_time = GetCookie("ses_login_time");
+
+	if( isNaN(cookie_time) || cookie_time == ""){
+		return "&nbsp;";
+	}
+
+	var elapsed_time =  new Date().getTime() - cookie_time;
+
+	var left_time = base_time - parseInt(  elapsed_time / 1000 );
+	var temp_min = parseInt( left_time / 60 );
+	var second = left_time % 60;
+	var hour = parseInt( temp_min / 60 );
+	var minute = temp_min % 60;
+//	var value = hour +" 시간 "+minute+" 분 "+second+" 초" ;
+	if(minute < 10 ){
+		minute = "0"+minute;
+	}
+
+	if(second < 10 ){
+		second = "0"+second;
+	}
+
+	var value = minute+" : "+second;
+
+	return value;
+}
+
+
+function time_reset(){
+	setRestoreTime();
+	SetCookie( "ses_auto_popup", "NO" );
+	$('.b-close').click();
+}
+
+function layer_close(){
+	$('.b-close').click();
+
+}
+
+function timer_layerpopup() {
+	SetCookie( "ses_auto_popup", "YES" );
+	$("#timer_layerpopup").bPopup({modalClose: false,});
+
+};
+
+if( !isNaN("null") && "null" != "" ){
+	SetCookie( "ses_login_time", "null" );
+}
+
+
+
+
+//]]>
+</script>
+
+<!-- 신규 js 2015.02 -->
+<script type="text/javascript" src="/js/neo_menu.js"></script>
+
+
+<div style="display:none">
+	
+</div>
+
+<div class="skipMenu">
+<a href="#contents">본문 바로가기</a>
+</div>
+
+<div id="neo_header">
+	<div class="neo_header_t_wrap">
+		<h1>
+			<a href="javascript:goLink('sts_com_mm00_001.do')"><img src="images/sts/neo_logo_neis_ss.png" alt="나이스 대국민서비스 학생서비스 로고" /></a>
+		</h1>
+		<div class="neo_hmb">
+			<ul class="neo_hmb_list">
+				<li><a href="javascript:goLink('pas_mms_nv99_001.do')">나이스홈</a></li>
+				<li><a href="javascript:goLink('sts_com_mm00_001.do')">처음으로</a></li>
+		
+			
+				<li class="neo_login"><a href="javascript:goLink('pas_mms_li00_001.do')">로그인</a></li>
+				<li><a href="javascript:goLink('pas_mms_mi00_001.do')"><strong>회원가입</strong></a></li>
+			</ul>
+			
+			
+		
+		</div>
+	</div>
+		<div class="neo_header_f_wrap">
+			<div class="neo_header_f">
+				<div class="neo_s_visual">학생서비스 - 학교생활정보를 활용할 수 있는 나만의 열린통로</div>
+			</div>
+		</div>
+</div>
+
+
+			
+			
+			
+
+		
+
+
+
+		<div id="neo_container">
+    		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function() {
+
+
+});
+
+//]]>
+</script>
+<script type="text/javascript">
+<!--
+	function goSigngateInfo(){
+		window.open('https://keris.signgate.com/cert/manage.do','popup_Signgate','width=1224,height=768,menubar=yes,location=yes,scrollbars=yes,status=yes,resizable=yes');
+	}
+
+	function fn_setDisplayTitle(obj, gubun){
+		if(gubun == '1'){
+			obj.parentNode.style.border = "1px dotted #202020";
+		}else{
+			obj.parentNode.style.border = "none";
+		}
+	}
+//-->
+</script>
+
+
+		<div class="neo_left_menu">
+ 		   
+			
+			<h2>회원마당</h2>
+			<ul class="neo_lnb">
+
+
+<!-- 회원마당 메뉴일 때 로그인전/후 다르게 표시 -->
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			<li><a href="javascript:goLink('pas_mms_li00_001.do')" onfocus="fn_setDisplayTitle(this, '1')" onblur="fn_setDisplayTitle(this, '0')"><span  class="on">로그인</span></a>
+        			
+        			
+        			
+				
+			
+		
+
+		
+
+		
+			
+			
+				
+        			
+        			</li>
+        			
+        			
+        			
+				
+			
+		
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			<li><a href="javascript:goLink('pas_mms_mi00_001.do')" onfocus="fn_setDisplayTitle(this, '1')" onblur="fn_setDisplayTitle(this, '0')"><span >회원가입</span></a>
+        			
+        			
+        			
+				
+			
+		
+
+		
+
+		
+			
+			
+				
+        			
+        			</li>
+        			
+        			
+        			
+				
+			
+		
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			<li><a href="javascript:goLink('pas_mms_mi06_001.do')" onfocus="fn_setDisplayTitle(this, '1')" onblur="fn_setDisplayTitle(this, '0')"><span >아이디찾기</span></a>
+        			
+        			
+        			
+				
+			
+		
+
+		
+
+		
+			
+			
+				
+        			
+        			</li>
+        			
+        			
+        			
+				
+			
+		
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			<li><a href="javascript:goLink('pas_mms_mi07_001.do')" onfocus="fn_setDisplayTitle(this, '1')" onblur="fn_setDisplayTitle(this, '0')"><span >비밀번호찾기</span></a>
+        			
+        			
+        			
+				
+			
+		
+
+		
+
+		
+			
+			
+				
+        			
+        			</li>
+        			
+        			
+        			
+				
+			
+		
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			
+        			
+				
+			
+		
+
+		
+
+		
+			
+			
+				
+        			
+        			
+        			
+				
+			
+		
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			
+        			
+				
+			
+		
+
+		
+			
+		
+
+		
+			
+			
+				
+        			
+        			
+        			
+				
+			
+		
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			
+        			
+				
+			
+		
+
+		
+
+		
+			
+			
+				
+        			
+        			
+        			
+				
+			
+		
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			
+        			
+				
+			
+		
+
+		
+
+		
+			
+			
+				
+        			
+        			
+        			
+				
+			
+		
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			
+        			
+				
+			
+		
+
+		
+
+		
+			
+			
+				
+        			
+        			
+        			
+				
+			
+		
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			
+        			
+        			<li><a href="javascript:goLink('pas_mms_nv10_001.do')" onfocus="fn_setDisplayTitle(this, '1')" onblur="fn_setDisplayTitle(this, '0')"><span >이용약관</span></a>
+        			
+				
+			
+		
+
+		
+
+		
+			
+			
+				
+        			
+        			
+        			
+        			</li>
+        			
+				
+			
+		
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			
+        			
+        			<li><a href="javascript:goLink('pas_mms_nv11_001.do')" onfocus="fn_setDisplayTitle(this, '1')" onblur="fn_setDisplayTitle(this, '0')"><span >이메일무단수집거부</span></a>
+        			
+				
+			
+		
+
+		
+
+		
+			
+			
+				
+        			
+        			
+        			
+        			</li>
+        			
+				
+			
+		
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			
+        			
+        			<li><a href="javascript:goLink('pas_mms_nv12_001.do')" onfocus="fn_setDisplayTitle(this, '1')" onblur="fn_setDisplayTitle(this, '0')"><span >저작권보호정책</span></a>
+        			
+				
+			
+		
+
+		
+
+		
+			
+			
+				
+        			
+        			
+        			
+        			</li>
+        			
+				
+			
+		
+
+	
+
+		<!-- 로그인전후 -->
+		
+			
+			
+				
+        			
+        			
+        			
+				
+			
+		
+
+		
+
+		
+			
+			
+				
+        			
+        			
+        			
+				
+			
+		
+
+	
+
+
+
+
+
+<!-- 회원마당 메뉴가 아닐때(학생/학부모메뉴) -->
+
+
+			
+		   
+			</ul>
+
+		</div>
+
+
+
+<!--
+			
+				
+					<div id="neo_wrap" class="neo_sub neo_sts">
+				
+				
+				
+			
+-->
+
+			
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/netfunnel/js/netfunnel_keris.js" charset="UTF-8" ></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- nos -->
+<script type="text/javascript" src="/pluginfree/js/nosquery-1.11.3.js" charset="utf-8"></script>
+
+<!-- raon keyboard -->
+<script type="text/javascript" src="/raon/transkey/transkey.js"></script>
+<script type="text/javascript" src="/raon/transkey/neis_transkey.js"></script>
+<link rel="stylesheet" type="text/css" href="/raon/transkey/transkey.css" />
+<!-- KSign Style Sheet -->
+<link rel="stylesheet" href="/kcase/lib/css/kcase.css" />
+
+<script src="/kcase/lib/js/kcaseagent.min.js"></script>
+<script src="/kcase/kcaseapi.js"></script>
+<script type="text/javascript" src="/pluginfree/js/nppfs-1.9.0.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="/js/pasconstants.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function() {
+	// 초기화 및 가상키보드, 키패드보안에 대한 사용구분값 input=hidden를 기존 form에 추가, 가상키패드 사용유무(checkbox)가 있다면 추가
+	/* 사이트별 설정이 틀려 함수 교체해야 할때 예시문
+	com_vk.setVKInit = function(arg1, arg2, arg3) {
+		alert(arg1+":"+arg2+":"+arg3);
+	};
+	*/
+	com_vk.setVKInit("loginForm", "nppfs", ""); // step1
+	if(com_vk.nppfs != null && com_vk.nppfs != "") { // step2
+		if(com_vk.nppfs == "true"){
+			com_vk.setVK(false, "fmberPassw");$("#nppfs2").attr("checked","checked");
+		} else {
+			com_vk.setVK(true, "fmberPassw");$("#nppfs2").attr("checked",null);
+		}
+	} else {
+		com_vk.setVK(true, "fmberPassw");$("#nppfs2").attr("checked",null);
+	}
+	com_vk.startTransKey(); // step3
+
+	// 가상키보드 상대위치 설정 (top, left)
+	com_vk.setVKPosition("22", "-110");
+
+
+
+	
+	// 로그인 페이지는 checkbox 함수를 재정의함. 체크박스가 두개여서
+	com_vk.autoKeyUseCheck = function autoKeyUseCheck(pId) {
+		var nppfs = $("#"+pId).is(":checked");
+		if (nppfs == true) { // 키보드보안 사용하기
+			$('#nppfs2').attr("checked","checked");
+			if (confirm(com_vk.msg.c100)) {
+				$.cookie(com_vk.cookieNm, "true", { expires: 365, path: '/', domain: com_vk.cookieDomain});
+				if (com_vk.vk_src == "" || com_vk.vk_src == null || com_vk.vk_src == "undefined") {
+					document.location.reload();
+				}
+				else {
+					goLink(com_vk.vk_src);
+				}
+			}
+			else {
+				$("#"+pId).attr("checked",null);
+				$('#nppfs2').attr("checked",null);
+			}
+		}
+		else { // 가상키패드 사용하기
+			$('#nppfs2').attr("checked",null);
+			if (confirm(com_vk.msg.c101)) {
+				$.cookie(com_vk.cookieNm, "false", { expires: 365, path: '/', domain: com_vk.cookieDomain});
+				if (com_vk.vk_src == "" || com_vk.vk_src == null || com_vk.vk_src == "undefined") {
+					document.location.reload();
+				}
+				else {
+					goLink(com_vk.vk_src);
+				}
+			}
+			else {
+				$("#"+pId).attr("checked","checked");
+				$('#nppfs2').attr("checked","checked");
+			}
+		}
+	}
+	com_vk.autoKeyUseCheckCopy = function autoKeyUseCheckCopy(pObj, pTargetId) {
+		var nppfs = $(pObj).is(":checked");
+		if (nppfs == true) { // 키보드보안 사용하기
+			$("#"+pTargetId).attr("checked","checked");
+		}
+		else { // 가상키패드 사용하기
+			$("#"+pTargetId).attr("checked",null);
+		}
+		com_vk.autoKeyUseCheck(pTargetId);
+	}
+	
+
+});
+
+
+
+//===============================================================================
+
+	/*
+	$(window).load(function(){
+		
+	});
+*/
+
+var browser = {
+	a : navigator.userAgent.toLowerCase()
+}
+browser = {
+	ie7 : browser.a.indexOf("msie 7") != -1
+}
+if (browser.ie7){
+	$("#pasContentsRight").css("margin-top" ,  "0");
+}
+
+$(document).ready(function(){
+
+	var passFalse;
+
+	$(function() {
+		if($.cookie("passFalse") != null && $.cookie("passFalse") != "") {
+			passFalse = $.cookie('passFalse');
+		} else {
+			$.cookie('passFalse', '0' ,{ expires: 1, path: '/', domain: '.neis.go.kr'});
+		}
+		//1.주어진 객체에 시도교육청 코드 입력
+		initAtptOfcdcScCombo("#geducation");
+		initAtptOfcdcScCombo("#choiceEN");
+
+		//2.조회된 시도교육청목록에서 현재시스템의 시도교육청 정보를 나타나게 해준다.
+		
+			$("#geducation").attr("value", "B10");
+			$("#choiceEN").attr("value", "B10");
+		
+
+		//3.로그인 실패할 경우 에러메시지를 보여줍니다.
+		
+
+
+
+		/*
+		 * passFalse 쿠키값 5이상일때 아이디찾는 페이지로 이동시킵니다.
+		 * 수정 - 보안문자를 보여줍니다.
+		 */
+		 if(passFalse >= 5){
+		 	captchaIn();
+			//alert("아이디 찾기 화면으로 이동합니다.");
+			//$.cookie('passFalse', '0' ,{ expires: 1, path: '/', domain: '.neis.go.kr'});
+			//location.replace("/pas_mms_mi06_001.do");// 수정필요 : url 변경시 아이디찾기화면으로
+		}
+
+		
+
+
+	});
+
+
+	$("#floginId, #fmberPassw").keypress(function(e){
+		if(e.keyCode==13) {
+			$("#btnIDPWD").click();
+			return false;
+		}
+	});
+
+
+
+		/*
+		 * TabMenu script
+		 */
+
+/*
+		var tebSrc1 = "/images/nsg/member/";
+		$("#memYCheck").click(function(){
+			$(this).attr("src",tebSrc1 + "tabMemOn.gif");
+			$("#memNCheck").attr("src",tebSrc1 + "tabNonMemOff.gif");
+			$("#memY").show();
+			$("#memN").hide();
+		});
+		$("#memNCheck").click(function(){
+			$(this).attr("src",tebSrc1 + "tabNonMemOn.gif");
+			$("#memYCheck").attr("src",tebSrc1 + "tabMemOff.gif");
+			$("#memN").show();
+			$("#memY").hide();
+		});
+*/
+
+	/*
+	 * ID Login
+	 */
+	$("#btnIDPWD").click(function() {
+		$.blockUI();
+
+				
+
+				var floginId   = $("#floginId").val().trim();
+				var fmberPassw = $("#fmberPassw").val().trim();
+
+				if($("#floginId").val().trim() == "" ) {
+					alert("아이디를 입력하세요");
+					$("#floginId").focus();
+					$.unblockUI();
+					return false;
+				}
+				if($("#fmberPassw").val().trim() == "" ) {
+					alert("비밀번호를 입력하세요");
+					$("#fmberPassw").focus();
+					$.unblockUI();
+					return false;
+				}
+
+				// raon 가상키패드 적용
+				var b_nppfs = $('#nppfs').is(":checked");
+				var strVkJson = null;
+				if (b_nppfs == false) {
+					com_vk.setTransKey("fmberPassw"); // 가상키보드, 키보드보안 사용설정에 따른 가상키패드 초기설정
+					strVkJson = com_vk.setTransKeyJson('fmberPassw');
+				}
+
+				if(passFalse >= 5) {
+					if($("#password").val().trim() == "" ) {
+						alert("보안문자를 입력하세요");
+						$("#password").focus();
+						$.unblockUI();
+						return false;
+					}
+
+					$.post("/pas_mms_mi20_s23.do", { "password" : $("#password").val().trim() }, function (data) {
+						var datas = $.trim(data);
+						//smwt
+						if(datas == "t" ) {
+							$.cookie('passFalse', '4' ,{ expires: 1, path: '/', domain: '.neis.go.kr'});
+							//fmberPassw.length
+							$.cookie('fmberPassw', fmberPassw.length ,{ expires: 1, path: '/'});
+							//var encptUserData = encryptUserData("{loginId: '" + floginId + "',mberPassw: '" + fmberPassw + "'}");
+							var encptUserData = neis_encrypt("{loginId: '" + floginId + "',mberPassw: '" + fmberPassw + "'}");
+
+							if (encptUserData.length == 0) {
+								alert("로그인을 위한 사용자정보를 암호화하는데 실패하였습니다.");
+								$.unblockUI();
+								return false;
+							} else {
+								alert("보안문자가 정상적으로 입력되었습니다. 로그인 화면으로 이동합니다.");
+
+								if (b_nppfs == false) {
+									com_vk.setTransKeyAppend("loginForm"); // form id
+								}
+								$("#LOGIN_TYP_CODE").val(LOGIN_TYP_IDPWD);
+								$("#ENCPT_DATA").val(encptUserData);
+
+								createWebParamsinForm("#loginForm");
+								//$("#loginForm").submit();
+								NetFunnel_Action({action_id:"neis_portal"},{
+									success:function(ev, ret){
+										checkDmtMberIdYn(LOGIN_TYP_IDPWD, encptUserData, strVkJson);
+									}
+								});
+
+							}
+							return false;
+
+						} else {
+							alert("보안문자를 다시 입력해주세요");
+							$.unblockUI();
+							return false;
+						}
+					});
+				} else {
+					//fmberPassw.length
+					$.cookie('fmberPassw', fmberPassw.length ,{ expires: 1, path: '/'});
+
+					//var encptUserData = encryptUserData("{loginId: '" + floginId + "',mberPassw: '" + fmberPassw + "'}");
+					var encptUserData = neis_encrypt("{loginId: '" + floginId + "',mberPassw: '" + fmberPassw + "'}");
+
+					if (encptUserData.length == 0) {
+						alert("로그인을 위한 사용자정보를 암호화하는데 실패하였습니다.");
+						$.unblockUI();
+						return false;
+					} else {
+						if (b_nppfs == false) {
+							com_vk.setTransKeyAppend("loginForm"); // form id
+						}
+						$("#LOGIN_TYP_CODE").val(LOGIN_TYP_IDPWD);
+						$("#ENCPT_DATA").val(encptUserData);
+
+						createWebParamsinForm("#loginForm");
+						//$("#loginForm").submit();
+						NetFunnel_Action({action_id:"neis_portal"},{
+							success:function(ev, ret){
+								checkDmtMberIdYn(LOGIN_TYP_IDPWD, encptUserData, strVkJson);
+							}
+						});
+
+					}
+					return false;
+				}
+
+	});
+
+	$("#btnIDRRN").click(function() {
+		$.blockUI();
+		
+			if($("input[name='num_agree']:checked").val() == "on" ){
+			} else {
+				alert("개인식별번호 처리 동의를 하셔야 합니다.");
+				$.unblockUI();
+				return false;
+			}
+
+			//성명의 유효성을 체크합니다.
+			if ($("#MBER_NM").val().trim().length == 0) {
+				alert("성명을 바르게 입력해주세요.");
+				$("#MBER_NM").focus();
+				$.unblockUI();
+				return false;
+			}
+			if ($("#MBER_RRN1").val().length != 6) {
+				alert("주민등록번호를 바르게 입력해주세요.");
+				$.unblockUI();
+				return false;
+			} else if ($("#MBER_RRN2").val().length != 7) {
+				alert("주민등록번호를 바르게 입력해주세요.");
+				$.unblockUI();
+				return false;
+			}
+			pasSyncCallAjax(PAGE_URL_SVR_CERT_INFO, '', '', doLoginByIDRRN);
+		
+	});
+
+	/*
+	 * 인증서 로그인
+	 */
+	var ksign_init_flag = false;
+	$("#btnAUTCE").click(function() {
+		$.blockUI();
+		if(ksign_init_flag == false){
+			var nppfs = $("#nppfs").is(":checked");
+			if (nppfs == true) {
+				kcaseagt.setVirtureKey(0); // NOS 사용
+			} else {
+				kcaseagt.setVirtureKey(1); // 가상키패드 사용
+			}
+			neis.init("aV33quCQ19ROQoL04Nh8v1A3PJnfydfmH17jN7fN5fQRkVarJzS1TSgEIjYvd6Cl.mest-pacwas1_servlet_paiwas2"
+				, function(){ // success
+					ksign_init_flag=true;
+					kcaseagt.transkey_init();
+					ksign_init_success();
+				}
+				/*
+				, function(){ // fail
+					if (confirm("인증서 로그인을 위해 인증서 로그인용 프로그램 설치가 필요합니다.\n설치하시겠습니까?")) {
+						nq("#nppfs-download").attr({src : "https://update.ksign.com/eis/neis/KCaseAgent_Installer.exe"});
+					}
+					$.unblockUI();
+				}*/
+				);
+		} else {
+			ksign_init_success();
+		}
+	});
+
+	function ksign_init_success(){
+		var nppfs = $("#nppfs").is(":checked");
+		if (nppfs == true) {
+			npPfsStartup(null, true, true, false, false, "npkencrypt", "on");
+			kcaseagt.enableNosAdapter();
+		}
+		
+			
+				
+					
+
+					pasSyncCallAjax(PAGE_URL_SVR_CERT_INFO, {"reqtype":"showcontrol"}, '', doLoginByAUTCE);
+				
+				
+			
+		
+	}
+
+	/*
+	 *	nonMember parent Login
+	 */
+	$("#btnGUEST").click(function() {
+		if (validGDomain()) {
+			$("#loginGUESTForm").attr("action", PAGE_URL_SPR_LOGIN);
+			$("#loginGUESTForm").submit();
+			return false;
+		} else {
+			return false;
+		}
+	});
+
+	/*
+	 * nonMember homeEdu Login
+	 */
+	$("#btnGUESTHes").click(function() {
+		//홈에듀민원서비스 오픈할때까지 임시 코드 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		//window.open("/html/homedu_temp.html", "newWindow", "left=150,width=610,height=430,scrollbars=no,status=no,resizable=no");
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		if (validGDomain()) {
+			$("#loginGUESTForm").attr("action", PAGE_URL_HES_LOGIN);
+			$("#loginGUESTForm").submit();
+			return false;
+		} else {
+	   		return false;
+	   	}
+	});
+
+
+	/**
+	 * nonMember recruit Login
+	 */
+	$("#btnGSTSFCsoEle, #btnGSTSFCsoMid, #btnGSTSFCsoOff").click(function() {
+		var appoExmntScCode = $(this).attr("value");
+
+		if (validGDomain()) {
+			$("#loginGUESTForm").append("<input type='hidden' name='appoExmntScCode' value='" + appoExmntScCode + "'>");
+			$("#loginGUESTForm").attr("action", PAGE_URL_CSO_LOGIN);
+			$("#loginGUESTForm").submit();
+			return false;
+		} else {
+			return false;
+		}
+		return false;
+	});
+
+	/**
+	 * nonMember exam Login
+	 */
+	$("#btnGSTRNSvc").click(function() {
+		// 임시로 막기
+		alert("검정고시 온라인 접수 서비스는 오픈 준비중 입니다.");
+		return false;
+		// 여기까지 임시
+		if (validGDomain()) {
+			$("#loginGUESTForm").attr("action", PAGE_URL_SQA_LOGIN);
+			$("#loginGUESTForm").submit();
+			return false;
+		} else {
+			return false;
+		}
+	});
+
+	/*
+	 * nonMember homeEdu Login
+	 */
+	$("#btnGUESTScs").click(function() {
+		if (validGDomain()) {
+			$("#loginGUESTForm").attr("action", PAGE_URL_SCS_LOGIN);
+			$("#loginGUESTForm").submit();
+			return false;
+		} else {
+			return false;
+		}
+	});
+
+	if($("#choiceEN").val() == "A00"){
+		$("#choiceEN").val("");
+	}
+
+	
+		
+		
+			tabSelect('1');
+		
+	
+
+	var autoCert = $.cookie("autoCert");
+
+
+	if(autoCert == "Y"){
+		$('input[name="neo_certi_auto"]:radio:input[value="Y"]').attr('checked', 'checked'); // from value
+
+		setTimeout(autoCertPop, 100);
+
+	}else{
+		$('input[name="neo_certi_auto"]:radio:input[value="N"]').attr('checked', 'checked'); // from value
+	}
+
+});
+
+function loginClick(){
+		$("#btnIDPWD").click();
+}
+
+function autoCertPop(){
+		$("#btnAUTCE").click();
+}
+
+function doLoginByIDRRN(data) {
+	autceSvrCert = data.resultSVO.autceSvrCert;
+	if (autceSvrCert == undefined || autceSvrCert == "") {
+		alert("서버인증서 조회에 실패하였습니다.");
+		$.unblockUI();
+	} else {
+		mberCertData = RequestSession(autceSvrCert, "SEED", "aV33quCQ19ROQoL04Nh8v1A3PJnfydfmH17jN7fN5fQRkVarJzS1TSgEIjYvd6Cl.mest-pacwas1_servlet_paiwas2");
+ 		if (mberCertData == "") {
+			$.unblockUI();
+ 			ECTErrorInfo();
+ 		}else{
+			var mberNmEncpt = $("#MBER_NM").val();
+			var mberRrnEncpt = $("#MBER_RRN1").val() + $("#MBER_RRN2").val();
+			//var encptUserData = encryptUserData("{mberNmEncpt: '" + mberNmEncpt + "',mberRrnEncpt: '" + mberRrnEncpt + "'}");
+			var encptUserData = neis_encrypt("{mberNmEncpt: '" + mberNmEncpt + "',mberRrnEncpt: '" + mberRrnEncpt + "'}");
+
+			if (encptUserData.length == 0) {
+				alert("로그인을 위한 사용자정보를 암호화하는데 실패하였습니다.");
+				$.unblockUI();
+				return false;
+			}
+
+			$("#LOGIN_TYP_CODE").val(LOGIN_TYP_RRN);
+			$("#AUTCE_DATA").val(mberCertData);
+			$("#ENCPT_DATA").val(encptUserData);
+
+	 		createWebParamsinForm("#loginForm");
+
+	 		$("#loginForm").submit();
+	 		return false;
+	 	}
+	 }
+	 $.unblockUI();
+}
+/*
+ * 서버인증서 로그인 처리
+*/
+function doLoginByAUTCE(data) {
+
+
+ 	autceSvrCert = data.resultSVO.autceSvrCert;
+	if (autceSvrCert == undefined || autceSvrCert == "") {
+		alert("서버인증서 조회에 실패하였습니다.");
+		$.unblockUI();
+	} else {
+		var algID = "SEED"
+
+		function signCertSuccess(mberCertData) {
+			$("#LOGIN_TYP_CODE").val(LOGIN_TYP_AUTCE);
+			$("#AUTCE_DATA").attr("value", mberCertData);
+
+			createWebParamsinForm("#loginForm");
+
+			//$("#loginForm").submit();
+			NetFunnel_Action({action_id:"neis_portal"},{
+				success:function(ev, ret){
+					checkDmtMberYn(LOGIN_TYP_AUTCE, mberCertData);
+				}
+			});
+
+	    	return false;
+		};
+
+		function signCertError(errCode, errMsg) {
+			alert(errCode + ": " + errMsg);
+		};
+
+		neis.reqSecChannelAndLogin(autceSvrCert, algID, "aV33quCQ19ROQoL04Nh8v1A3PJnfydfmH17jN7fN5fQRkVarJzS1TSgEIjYvd6Cl.mest-pacwas1_servlet_paiwas2", signCertSuccess, signCertError);
+
+	 }
+	 $.unblockUI();
+}
+
+/**
+ * 기존회원로그인을 클릭할 경우 서비스이용 교육청 선택값에 대한 유효성검사하는 함수
+ */
+function validGDomain() {
+	if ($("#choiceEN").val() == '') {
+		alert("서비스 이용 교육청을 선택하세요.");
+		return false;
+	} else if ($("#choiceEN").val() == DOMAIN_CODE_PAS) {
+		alert("다른 서비스 이용 교육청을 선택하세요.");
+		return false;
+	}
+	//이동할 시도교육청 코드를 선택한다.
+	$("#GUEST_DOMAIN_CODE").val($("#choiceEN").val());
+		return true;
+}
+
+/**
+ * 비회원로그인을 클릭할 경우 서비스이용 교육청 선택값에 대한 유효성검사하는 함수
+ */
+function validateGDomain() {
+	if ($("#geducation").val() == '') {
+		alert("서비스 이용 교육청을 선택하세요.");
+		return false;
+	}
+	else if ($("#geducation").val() == DOMAIN_CODE_PAS) {
+		alert("다른 서비스 이용 교육청을 선택하세요.");
+		return false;
+ 	}
+	//이동할 시도교육청 코드를 선택한다.
+	$("#GUEST_DOMAIN_CODE").val($("#geducation").val());
+	return true;
+}
+
+function captchaIn(){
+	$.post("/pas_mms_mi20_s22.do", { }, function (data) {
+		var datas = $.trim(data);
+		$("#security").css("display", "block");
+		$("#security").css("margin-left", "-22px");
+		$("#security").css("width", "209px");
+		$("#security").html(datas);
+	});
+}
+function tabSelect(index){
+	if ( index == '1' ){
+		$('#tab_type1_1').addClass('on');
+		$('#tab_type1_2').removeClass('on');
+		$('#tab_con1').show();
+		$('#tab_con2').hide();
+	} else {
+		$('#tab_type1_1').removeClass('on');
+		$('#tab_type1_2').addClass('on');
+		$('#tab_con1').hide();
+		$('#tab_con2').show();
+	}
+}
+
+function autoCertCheck(){
+	var autoCert =  $('input[name="neo_certi_auto"]:checked').val() ;
+	$.cookie("autoCert", autoCert, {expires:365, path:"/"} );
+}
+
+function goSigngateInfo(){
+	window.open('https://keris.signgate.com/cert/manage.do','popup_Signgate','width=1224,height=768,menubar=yes,location=yes,scrollbars=yes,status=yes,resizable=yes');
+}
+
+function onePassLogin(){
+	
+		document.loginOnePass.submit();
+	
+}
+
+var dmtMberId = "";
+var dmtMberNm = "";
+
+
+function checkDmtMberIdYn(loginTypeCode, encptUserData, strVkJson){
+	NetFunnel_Complete();
+	$.unblockUI();
+	pasSyncCallAjax(
+		"pas_mms_li02_001.do",
+		{encptData:encptUserData,loginTypeCode:loginTypeCode,vkJson:strVkJson},
+		"",
+		function(data) {
+
+			if (data.resultSVO.resultStatus == undefined || data.resultSVO.resultStatus == "") {
+
+				var dmtMberYn = data.resultSVO.pasMmsLi02M00DVO.dmtMberYn;
+
+				if(dmtMberYn == "Y"){
+					$("#dmtMberId").val(data.resultSVO.pasMmsLi02M00DVO.mberId);
+					$("#dmtMberNm").val(data.resultSVO.pasMmsLi02M00DVO.mberNm);
+					$("#emMberNm").text(data.resultSVO.pasMmsLi02M00DVO.mberNm);
+
+					openDmtMberInfo();
+				}else{
+					$.blockUI();
+					$("#loginForm").submit();
+				}
+			} else {
+				alert(data.resultSVO.resultStatus);
+			}
+
+		},
+		function() {
+			alert("아이디 혹은 비밀번호가 일치하지 않습니다.");
+		}
+	);
+
+	return false;
+}
+
+function checkDmtMberYn(loginTypeCode, encptUserData, strVkJson){
+	NetFunnel_Complete();
+	$.unblockUI();
+	pasSyncCallAjax(
+		"pas_mms_li02_001.do",
+		{encptData:encptUserData,loginTypeCode:loginTypeCode,vkJson:strVkJson},
+		"",
+		function(data) {
+
+			if (data.resultSVO.resultStatus == undefined || data.resultSVO.resultStatus == "") {
+
+				var dmtMberYn = data.resultSVO.pasMmsLi02M00DVO.dmtMberYn;
+
+				if(dmtMberYn == "Y"){
+					$("#dmtMberId").val(data.resultSVO.pasMmsLi02M00DVO.mberId);
+					$("#dmtMberNm").val(data.resultSVO.pasMmsLi02M00DVO.mberNm);
+					$("#emMberNm").text(data.resultSVO.pasMmsLi02M00DVO.mberNm);
+
+					openDmtMberInfo();
+				}else{
+					$.blockUI();
+					$("#loginForm").submit();
+				}
+			} else {
+				alert(data.resultSVO.resultStatus);
+			}
+
+		},
+		function() {
+			alert("현재 선택하신 인증서는 폐지된 인증서거나 유효기간이 만료된 인증서입니다.");
+		}
+	);
+
+	return false;
+}
+
+function openDmtMberInfo(){
+	$("#layerDmtMberInfo").bPopup({modalClose: false});
+}
+
+function closeDmtMberInfo(){
+	$('#layerDmtMberInfo').css('display','none');
+}
+
+var isTryDmtMberRelis = false;
+
+function dmtMberRelis(){
+	if(isTryDmtMberRelis){
+		return;
+	}
+
+	isTryDmtMberRelis = true;
+
+	pasSyncCallAjax(
+		"pas_mms_li02_002.do",
+		{mberId:$("#dmtMberId").val()},
+		"",
+		function(data) {
+			var resultStatus = data.resultSVO.resultStatus;
+
+			if(resultStatus == "SUCCESS"){
+				closeDmtMberInfo();
+				alert("휴면회원 해제가 완료되었습니다.\n로그인을 진행합니다.");
+				$.blockUI();
+				$("#loginForm").submit();
+			}else{
+				alert("휴면회원 해제 중 오류가 발생했습니다.\n관리자에게 문의하세요.");
+			}
+		},
+		function() {
+			alert("휴면회원 해제 중 오류가 발생했습니다.\n관리자에게 문의하세요.");
+		}
+	);
+}
+
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+/*
+	$(".sub_con").defaultTab({
+		eventEls : ".tab_type1>li>a"
+	});
+*/
+//]]>
+</script>
+
+
+
+
+	
+	
+		
+	
+	
+
+
+
+		<!-- neo_s_contents -->
+		<div class="neo_s_contents">
+
+			<div id="contents" class="pas_con">
+				<!-- page info -->
+				<div class="page_info">
+					<h1>로그인</h1>
+					<div class="path">
+						<a href='javascript:goLink("sts_com_mm00_001.do")' class='home'>홈</a> > <a href='javascript:goLink("pas_mms_li00_001.do")'>회원마당</a> > <strong>로그인</strong>
+					</div>
+
+				</div>
+				<!-- //page info -->
+
+				<!-- sub content -->
+				<div class="sub_con pas_login">
+
+					<div class="neo_login_notice">
+						<p style="width:730px"><strong>아이디 로그인을 하시면
+
+	
+	
+							학생서비스의
+	
+
+								일부만 열람</strong>하실 수 있습니다.<br /> 모든 서비스를 원활하게 이용하시려면 <strong>회원가입 후 등록한 인증서로 로그인</strong>하여 이용바랍니다.
+						<br />※ 단, ‘디지털 원패스 로그인’에서 ‘보안수준 높음’의 인증수단으로 로그인하시면, 인증서 로그인과 동일하게 서비스 이용이 가능합니다.
+						</p>
+<!--						<a href="#"><img src="../images/sts/neo_btn_login_method.png" alt="로그인 방법별 이용가능 메뉴 안내" /></a>-->
+
+						<p><strong>개인민감정보의 입력은 가상키패드(기본) 또는 키보드보안 프로그램을 통하여 입력이 가능합니다.</strong>
+						<br />(가상키패드는 마우스를 사용하므로 불편하실 수 있습니다.)
+						<br />※ 보안성 향상 및 편의성 보장을 위하여, 키보드보안 프로그램 또한 제공하고 있습니다.(사용권장)
+						<br />※ 키보드보안 프로그램을 설치/사용하면 PC 백신/방화벽/메모리 보호 기능이 추가적으로 제공됩니다.</p>
+					</div>
+
+					<div class="neo_loggin_input_box">
+
+						<!-- 인증서로그인 -->
+						<div class="neo_login_certi">
+							<h3><img src="../images/sts/neo_login_title_01.png" alt="등록된 인증서 로그인" /></h3>
+							<div class="neo_certi_btn">
+								<a href="#" id="btnAUTCE"><img src="../images/sts/neo_btn_login_sign2.png" alt="인증서 로그인" /></a>
+
+	
+	
+							<a href="javascript:go_MenuLink('sts_m41360')"><img src="../images/sts/neo_btn_login_sign_info_new2.png" alt="인증서 발급 안내" /></a>
+	
+
+							<a href="javascript:goSigngateInfo()" title="인증서 관리[새창]"><img src="../images/sts/neo_btn_login_sign_manage2.png" alt="인증서 관리" /></a>
+							</div>
+							<dl class="neo_certi_auto">
+								<dd>
+									<ul class="sel_list">
+
+	
+	
+										<input type="checkbox" id="nppfs2" name="nppfs2" checked="" onclick="javascript:com_vk.autoKeyUseCheckCopy(this,'nppfs');" /><label for="nppfs2">가상키패드 미사용(키보드보안 사용)</label>
+	
+
+									</ul>
+								</dd>
+							</dl>
+							<dl class="neo_certi_auto">
+								<dt>인증서 자동팝업</dt>
+								<dd>
+									<ul class="sel_list">
+										<li><input type="radio" id="neo_certi_auto_n" name="neo_certi_auto" onclick="javascript:autoCertCheck()" value="N" /><label for="neo_certi_auto_n">사용 안 함</label></li>
+										<li><input type="radio" id="neo_certi_auto_y" name="neo_certi_auto" onclick="javascript:autoCertCheck()" value="Y" /><label for="neo_certi_auto_y">사용함</label></li>
+									</ul>
+								</dd>
+							</dl>
+							<div class="neo_certi_note">
+								<p class="neo_cn_txt">인증서 로그인은 회원가입 후 이용하시기 바랍니다.</p>
+<!--
+								<div class="neo_cn_btn">
+									<a href="#"><img src="../images/sts/neo_btn_login_sign_guide.png" alt="인증서이용안내" /></a>
+								</div>
+-->
+							</div>
+						</div>
+						<!-- //인증서로그인 -->
+
+						<!-- 아이디로그인 -->
+						<div class="neo_login_id">
+
+
+
+	
+	
+
+							<h3><img src="../images/sts/neo_login_title_02.png" alt="아이디 로그인" /></h3>
+							<div class="neo_id_input">
+							<form name="ClassID" method="post" action="">
+
+								<label class="blind" for="floginId">아이디</label><input type="text" id="floginId" name="floginId" class="neo_int_id" maxlength="20" />
+								<label class="blind" for="fmberPassw">비밀번호</label><input type="password" id="fmberPassw" name="fmberPassw" class="neo_int_pw" maxlength="20"/>
+								<a href="#" onkeydown="if(event.keyCode==13){loginClick(); return false;}"><img src="../images/sts/neo_btn_login_sp.png" id="btnIDPWD" alt="로그인" /></a>
+							</form>
+							</div>
+							<div class="neo_id_note">
+								<input type="checkbox" id="nppfs" name="nppfs" checked="" onclick="javascript:com_vk.autoKeyUseCheck('nppfs');" /><label for="nppfs">가상키패드 미사용(키보드보안 사용)</label>
+							</div>
+							<div class="neo_id_note">
+								<p class="neo_in_txt">아이디나 비밀번호를 잊어버리셨나요?</p>
+								<div class="neo_in_btn">
+									<a href="javascript:goLink('pas_mms_mi06_001.do')" ><img src="../images/sts/neo_btn_login_id_search.png"  alt="아이디 찾기" /></a>
+									<a href="javascript:goLink('pas_mms_mi07_001.do')" ><img src="../images/sts/neo_btn_login_password_search.png" alt="비밀번호 찾기" /></a>
+								</div>
+
+								<!-- 보안문자입력 -->
+								<div class="box_type4 mt20" id="security" style="display:none;">
+									<!-- div class="securityImg"><img src="/images/nsg/member/testImg.gif" alt="test" /></div>
+									<div class="alert2">비밀 번호를 5회 이상 틀렸습니다.<br />
+										위 이미지에 표시된 대로 글자를 입력해 주세요</div>
+									<div class="enterSecu">
+										<input type="text" id="" name="" class="inputSecuTxt" value="GELLARTUST" />
+										<input type="image" id="" name="" src="/images/nsg/member/btn_cha.gif" alt="문자다시보기" class="brdnone" />
+									</div>
+									문자는 대소문자를 구분하지 않습니다. -->
+									<!--// 보안문자입력 -->
+								</div>
+							</div>
+	
+
+
+						</div>
+						<!-- //아이디로그인 -->
+
+						<!-- 디지털원패스 -->
+						<div class="neo_onepass_join">
+							<h3><img src="../images/sts/neo_login_title_03.png" alt="디지털원패스 로그인" /></h3>
+							<div class="neo_onepass_note">
+								<p class="neo_onepass_txt">
+									하나의 아이디로 본인이 선택한 인증수단을 사용하여 안전하고 편리하게 여러 전자 정부 서비스를 이용할 수 있는 인증 서비스 입니다.
+								</p>
+							</div>
+							<div class="neo_onepass_area">
+								<div class="neo_onepass_btn">
+								    <a href="javascript:onePassLogin();"><img src="../images/pas/common/onepass_service_login.png" alt="디지털원패스 아이디로 로그인" /></a>
+								</div>
+								<p class="neo_onepass_tel">
+									<strong>디지털원패스 이용문의</strong> <br/>(<a href="https://www.onepass.go.kr" target="_blank" title="디지털원패스[새창]">https://www.onepass.go.kr</a>)
+								</p>
+							</div>
+						</div>
+						<!-- //디지털원패스 -->
+
+						<!-- 회원가입 -->
+						<div class="neo_member_join">
+							<p class="neo_mj_txt">아직 회원이 아니신가요? 회원가입을 하시면 나이스 대국민서비스에서는 <strong>학교생활 전반에 관한 성적표, 생활기록부,<br /> 식단, 시간표 등의 열람이 가능 합니다.</strong></p>
+							<div class="neo_mj_btn">
+
+
+
+	
+	
+						<a href="javascript:go_MenuLink('sts_m41320')"><img src="../images/sts/neo_btn_login_membership_guide.png" alt="회원가입절차 안내" /></a>
+	
+
+
+
+
+
+
+								<a href="javascript:goLink('pas_mms_mi00_001.do')"><img src="../images/sts/neo_btn_login_membership.png" alt="회원가입" /></a>
+							</div>
+						</div>
+						<!-- //회원가입 -->
+
+					</div>
+
+				</div>
+				<!-- //sub content -->
+			</div>
+		</div>
+		<!-- //neo_s_contents -->
+
+		<div class="over" id="layerDmtMberInfo">
+			<div class="over_dmAccnt">
+				<h6 class="dmA_title">[휴면회원 해제 안내]</h6>
+				<p class="dmA_info">안녕하세요, <em id="emMberNm">OOO</em>님.
+					<br>회원님은 해당 서비스를 장기간 로그인을 하지 않으셔서 개인정보 보호를 위해 휴면 회원처리 되어었습니다.
+					<br>회원에 한하여 제공되는 서비스를 지속적으로 이용하기 위해서는, 휴면회원 해제 동의가 필요합니다.
+					<br>아래의 버튼을 클릭하셔서 휴면회원 해제를 진행하여 주십시오.
+				</p>
+				<div class="dmA_btn" style="text-align:center;">
+					<a class="b-close" href="javascript:dmtMberRelis();" class="neo_btn_mj_agree" onkeydown="if(event.keyCode==13){dmtMberRelis();}"><img src="/images/pas/neo_btn_member_agree_2.png" onclick="dmtMberRelis();" alt="동의합니다." /></a>
+					<a class="b-close" href="javascript:void(0)" class="neo_btn_mj_agree" onkeydown="if(event.keyCode==13){void(0);}"><img src="/images/pas/neo_btn_member_noagree_2.png" onclick="void(0);" alt="동의하지 않습니다." /></a>
+				</div>
+				<div class="dmA_info2">
+					<div class="info2_float">* </div>
+					<div class="info2_float">"동의하지 않습니다" 를 선택하실 경우 회원서비스를 이용하실 수 없으며, 휴면회원을 1년 이상 유지하신다면 회원약관에 의거하여 회원자격이 상실될 수 있습니다.</div>
+				</div>
+			</div>
+		</div>
+
+<form id="loginForm" name="loginForm" action="/pas_mms_li00_002.do" method="post">
+	<input type="hidden" id="LOGIN_TYP_CODE"	name="loginTypCode"  	value="" />
+	<input type="hidden" id="AUTCE_DATA" 		name="autceData" 		value="" />
+	<input type="hidden" id="ENCPT_DATA" 	 	name="encptData" 		value="" />
+	<input type="hidden" id="RETURN_PAGE" 		name="returnPage" 		value="sts_com_mm00_001.do" />
+	<input type="hidden" id="RETURN_BIZ" 		name="returnBiz" 		value="STS" />
+	<input type="hidden" id="RETURN_DOMAIN" 	name="returnDomain" 	value="B10" />
+<!--<input type="hidden" id="RETURN_PAGE" 		name="returnPage" 		value="" />
+<input type="hidden" id="RETURN_BIZ" 		name="returnBiz" 		value="" />
+<input type="hidden" id="RETURN_DOMAIN" 	name="returnDomain" 	value="" />-->
+<!-- input type="image"  id="blkImage1" 		name="blkImage" 		src="/images/nsg/table/blank.gif" alt="" /-->
+</form>
+<form id="loginGUESTForm" name="loginGUESTForm" action="/pas_mms_li00_002.do" method="post">
+	<input type="hidden" id="GUEST_RETURN_PAGE" name="returnPage" 	value="sts_com_mm00_001.do" />
+	<input type="hidden" id="GUEST_DOMAIN_CODE" name="domainCode" 	value="" />
+	<!-- input type="image"  id="blkImage2" 		name="blkImage" 	src="/images/nsg/table/blank.gif" alt="" class="brdnone" /-->
+</form>
+<form id="loginOnePass" name="loginOnePass" method="post" action="https://saml.onepass.go.kr/login/check">
+	<input type="hidden" name="authnRequest" 	value="PHNhbWxwOkF1dGhuUmVxdWVzdCBJc3N1ZUluc3RhbnQ9IjIwMjEtMDEtMjVUMTU6MDA6MTcuNTEy%0AWiIgSUQ9ImFmMDVlZWQ5LTFmNjEtNDJiZS04YjEzLTZkNzNmYzZjYzJhMyIgeG1sbnM6c2FtbHA9%0AInVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpwcm90b2NvbCIgUHJvdG9jb2xCaW5kaW5nPSJ1%0Acm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YmluZGluZ3M6SFRUUC1QT1NUIiBEZXN0aW5hdGlv%0Abj0iaHR0cHM6Ly9zYW1sLm9uZXBhc3MuZ28ua3IvbG9naW4vY2hlY2siIFByb3ZpZGVyTmFtZT0i%0AMi4wLjAiIEFzc2VydGlvbkNvbnN1bWVyU2VydmljZVVSTD0iYzRhZWNhOWFkYzlmOTM3YTk2ZDlm%0AMTgwNzhkZTliNTNjMjc4MjNkNWUyOThlYzFlMDRjYTk0MTNlZjNhYTQzOTE1ZGI1OWVkNzgwNWY0%0AODNmNjBiZTQyY2ZhZDkxNWNmZTQ0MDlkYWFlOWVkMzJmNTJjMGVmNjQ1MzdhNjJmZWI4NWYxMzY0%0AZWQ1ZDliM2UxZDhjMmU2Zjk2N2Q3MGU1OTNmNjFiMzdjODM5MDY0OWMwZWI0YjgzNDUwMTc2MzQx%0AMzUxMzhhY2I5NjNjZDM0MjljMjE0MWIxZDFiOGMyOGY0YjU0OTMyN2E0NDcwMGU2Yzg4OWYzNTc3%0AMTJjNTY1NSIgVmVyc2lvbj0iMi4wIj48c2FtbDpJc3N1ZXIgU1BQcm92aWRlZElEPSI0MGE0YTJj%0AYjZmYjA1OTdiOWEwZmU5ODA1NDVhZjlhMjM4NDM3OGVhMWUwODhhM2YxNGEwMjY5OGM5OTBjOTQ2%0AZDYxYjY1OWZmNTkwOGYxYzY3Y2RhZmMwMTNjYjMwYjFkMjE2ZjdjNDgyMmI0Yjg3ODUxNzVhYWUx%0AYzAzYjdhZjQ3M2MzNjc3YTM0MDYyNGVjNTZhYzA1YTg5Y2Q4NWQ1MWZjMTQ0NTM5NmU0ODcyODA1%0AZGY5NzUyMjBjYWQ4ZDllMDNlYWM3ZWFmNGU0YTA5ZmMwYWQ5ZTFkNjBhYThhNWRkMzlhMjNlODk1%0AZTc0ODY5OGQ3Njg2MjlmOGVjZTk0IiB4bWxuczpzYW1sPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FN%0ATDoyLjA6YXNzZXJ0aW9uIj5odHRwczovL3d3dy5uZWlzLmdvLmtyPC9zYW1sOklzc3Vlcj48L3Nh%0AbWxwOkF1dGhuUmVxdWVzdD4%3D"	/>
+
+	
+
+</form>
+<form id="dmtMberForm" name="dmtMberForm" action="/pas_mms_li02_p01.do" method="post">
+	<input type="hidden" id="dmtMberId" name="dmtMberId" 	value="" />
+	<input type="hidden" id="dmtMberNm" name="dmtMberNm" 	value="" />
+</form>
+
+
+
+
+<!--			</div>-->
+		</div>
+
+		
+			
+				
+
+
+
+
+<script type="text/javascript">
+	function openRemote(){
+		var currentUrl = document.location+"";
+
+		if (currentUrl.indexOf("goe.go.kr") != -1)
+		{
+			window.open('http://sos.goe.go.kr/','','width=800,height=800,scrollbars=1');
+		}
+		else if (currentUrl.indexOf("cne.go.kr") != -1)
+		{
+			window.open('http://180.80.46.221/','','width=800,height=800,scrollbars=1');
+		}
+    	else if (currentUrl.indexOf("sje.go.kr") != -1)	{
+    		window.open('http://help.sje.go.kr/','','width=800,height=800,scrollbars=1');
+    	}
+		else {
+			window.open('http://as.neis.go.kr/new_neis/','','width=800,height=800,scrollbars=1');
+		}
+	}
+
+	$(document).ready(function(){
+		$('#neo_footer').show();
+
+
+		$("#veraInstall").click( function() {
+			location.href = veraInstallUrl;
+		});
+
+
+	});
+
+
+	Map = function(){
+	 this.map = new Object();
+	};
+	Map.prototype = {
+		put : function(key, value){
+			this.map[key] = value;
+		},
+		get : function(key){
+			return this.map[key];
+		},
+		containsKey : function(key){
+		 return key in this.map;
+		},
+		containsValue : function(value){
+		 for(var prop in this.map){
+		  if(this.map[prop] == value) return true;
+		 }
+		 return false;
+		},
+		isEmpty : function(key){
+		 return (this.size() == 0);
+		},
+		clear : function(){
+		 for(var prop in this.map){
+		  delete this.map[prop];
+		 }
+		},
+		remove : function(key){
+		 delete this.map[key];
+		},
+		keys : function(){
+			var keys = new Array();
+			for(var prop in this.map){
+				keys.push(prop);
+			}
+			return keys;
+		},
+		values : function(){
+		 var values = new Array();
+			for(var prop in this.map){
+			 values.push(this.map[prop]);
+			}
+			return values;
+		},
+		size : function(){
+		  var count = 0;
+		  for (var prop in this.map) {
+			count++;
+		  }
+		  return count;
+		}
+	};
+
+	var sidoMap = new Map();
+
+			sidoMap.put("P10_SQA_REA","kged.jbe.go.kr");
+
+			sidoMap.put("T10_SQA_REA","kged.jje.go.kr");
+
+			sidoMap.put("C10_HES_REA","hdu.pen.go.kr");
+
+			sidoMap.put("G10_HES_REA","hdu.dje.go.kr");
+
+			sidoMap.put("K10_HES_REA","hdu.kwe.go.kr");
+
+			sidoMap.put("E10_PAS_REA","homedu.ice.go.kr");
+
+			sidoMap.put("E10_SCS_REA","hakwon.ice.go.kr");
+
+			sidoMap.put("S10_HES_REA","hdu.gne.go.kr");
+
+			sidoMap.put("I10_PAS_REA","homedu.sje.go.kr");
+
+			sidoMap.put("I10_SCS_REA","hakwon.sje.go.kr");
+
+			sidoMap.put("M10_PAS_REA","homedu.cbe.go.kr");
+
+			sidoMap.put("M10_SCS_REA","hakwon.cbe.go.kr");
+
+			sidoMap.put("Q10_PAS_REA","homedu.jne.go.kr");
+
+			sidoMap.put("Q10_SCS_REA","hakwon.jne.go.kr");
+
+			sidoMap.put("C10_STS_REA","stu.pen.go.kr");
+
+			sidoMap.put("C10_EDR_REA","eduro.pen.go.kr");
+
+			sidoMap.put("C10_SPR_REA","par.pen.go.kr");
+
+			sidoMap.put("G10_STS_REA","stu.dje.go.kr");
+
+			sidoMap.put("G10_EDR_REA","eduro.dje.go.kr");
+
+			sidoMap.put("G10_SPR_REA","par.dje.go.kr");
+
+			sidoMap.put("K10_STS_REA","stu.kwe.go.kr");
+
+			sidoMap.put("K10_EDR_REA","eduro.kwe.go.kr");
+
+			sidoMap.put("K10_SPR_REA","par.kwe.go.kr");
+
+			sidoMap.put("D10_CSO_REA","edurecruit.dge.go.kr");
+
+			sidoMap.put("S10_STS_REA","stu.gne.go.kr");
+
+			sidoMap.put("C10_SQA_REA","kged.pen.go.kr");
+
+			sidoMap.put("S10_EDR_REA","eduro.gne.go.kr");
+
+			sidoMap.put("H10_CSO_REA","edurecruit.use.go.kr");
+
+			sidoMap.put("S10_SPR_REA","par.gne.go.kr");
+
+			sidoMap.put("G10_SQA_REA","kged.dje.go.kr");
+
+			sidoMap.put("K10_SQA_REA","kged.kwe.go.kr");
+
+			sidoMap.put("P10_CSO_REA","edurecruit.jbe.go.kr");
+
+			sidoMap.put("T10_CSO_REA","edurecruit.jje.go.kr");
+
+			sidoMap.put("S10_SQA_REA","kged.gne.go.kr");
+
+			sidoMap.put("B10_HES_REA","hdu.sen.go.kr");
+
+			sidoMap.put("F10_HES_REA","hdu.gen.go.kr");
+
+			sidoMap.put("J10_HES_REA","hdu.goe.go.kr");
+
+			sidoMap.put("N10_HES_REA","hdu.cne.go.kr");
+
+			sidoMap.put("D10_PAS_REA","homedu.dge.go.kr");
+
+			sidoMap.put("D10_SCS_REA","hakwon.dge.go.kr");
+
+			sidoMap.put("R10_HES_REA","hdu.gbe.kr");
+
+			sidoMap.put("H10_PAS_REA","homedu.use.go.kr");
+
+			sidoMap.put("H10_SCS_REA","hakwon.use.go.kr");
+
+			sidoMap.put("P10_PAS_REA","homedu.jbe.go.kr");
+
+			sidoMap.put("P10_SCS_REA","hakwon.jbe.go.kr");
+
+			sidoMap.put("B10_STS_REA","stu.sen.go.kr");
+
+			sidoMap.put("B10_EDR_REA","eduro.sen.go.kr");
+
+			sidoMap.put("T10_PAS_REA","homedu.jje.go.kr");
+
+			sidoMap.put("T10_SCS_REA","hakwon.jje.go.kr");
+
+			sidoMap.put("B10_SPR_REA","par.sen.go.kr");
+
+			sidoMap.put("F10_STS_REA","stu.gen.go.kr");
+
+			sidoMap.put("F10_EDR_REA","eduro.gen.go.kr");
+
+			sidoMap.put("F10_SPR_REA","par.gen.go.kr");
+
+			sidoMap.put("J10_STS_REA","stu.goe.go.kr");
+
+			sidoMap.put("J10_EDR_REA","eduro.goe.go.kr");
+
+			sidoMap.put("J10_SPR_REA","par.goe.go.kr");
+
+			sidoMap.put("N10_STS_REA","stu.cne.go.kr");
+
+			sidoMap.put("N10_EDR_REA","eduro.cne.go.kr");
+
+			sidoMap.put("C10_CSO_REA","edurecruit.pen.go.kr");
+
+			sidoMap.put("N10_SPR_REA","par.cne.go.kr");
+
+			sidoMap.put("R10_STS_REA","stu.gbe.kr");
+
+			sidoMap.put("R10_EDR_REA","eduro.gbe.kr");
+
+			sidoMap.put("B10_SQA_REA","kged.sen.go.kr");
+
+			sidoMap.put("G10_CSO_REA","edurecruit.dje.go.kr");
+
+			sidoMap.put("R10_SPR_REA","par.gbe.kr");
+
+			sidoMap.put("F10_SQA_REA","kged.gen.go.kr");
+
+			sidoMap.put("K10_CSO_REA","edurecruit.kwe.go.kr");
+
+			sidoMap.put("J10_SQA_REA","kged.goe.go.kr");
+
+			sidoMap.put("N10_SQA_REA","kged.cne.go.kr");
+
+			sidoMap.put("S10_CSO_REA","edurecruit.gne.go.kr");
+
+			sidoMap.put("R10_SQA_REA","kged.gbe.kr");
+
+			sidoMap.put("E10_HES_REA","hdu.ice.go.kr");
+
+			sidoMap.put("I10_HES_REA","hdu.sje.go.kr");
+
+			sidoMap.put("M10_HES_REA","hdu.cbe.go.kr");
+
+			sidoMap.put("C10_PAS_REA","homedu.pen.go.kr");
+
+			sidoMap.put("C10_SCS_REA","hakwon.pen.go.kr");
+
+			sidoMap.put("Q10_HES_REA","hdu.jne.go.kr");
+
+			sidoMap.put("G10_PAS_REA","homedu.dje.go.kr");
+
+			sidoMap.put("G10_SCS_REA","hakwon.dje.go.kr");
+
+			sidoMap.put("K10_PAS_REA","homedu.kwe.go.kr");
+
+			sidoMap.put("K10_SCS_REA","hakwon.kwe.go.kr");
+
+			sidoMap.put("S10_PAS_REA","homedu.gne.go.kr");
+
+			sidoMap.put("S10_SCS_REA","hakwon.gne.go.kr");
+
+			sidoMap.put("E10_STS_REA","stu.ice.go.kr");
+
+			sidoMap.put("E10_EDR_REA","eduro.ice.go.kr");
+
+			sidoMap.put("E10_SPR_REA","par.ice.go.kr");
+
+			sidoMap.put("I10_STS_REA","stu.sje.go.kr");
+
+			sidoMap.put("I10_EDR_REA","eduro.sje.go.kr");
+
+			sidoMap.put("I10_SPR_REA","par.sje.go.kr");
+
+			sidoMap.put("M10_STS_REA","stu.cbe.go.kr");
+
+			sidoMap.put("M10_EDR_REA","eduro.cbe.go.kr");
+
+			sidoMap.put("B10_CSO_REA","edurecruit.sen.go.kr");
+
+			sidoMap.put("M10_SPR_REA","par.cbe.go.kr");
+
+			sidoMap.put("Q10_STS_REA","stu.jne.go.kr");
+
+			sidoMap.put("Q10_EDR_REA","eduro.jne.go.kr");
+
+			sidoMap.put("F10_CSO_REA","edurecruit.gen.go.kr");
+
+			sidoMap.put("Q10_SPR_REA","par.jne.go.kr");
+
+			sidoMap.put("E10_SQA_REA","kged.ice.go.kr");
+
+			sidoMap.put("J10_CSO_REA","edurecruit.goe.go.kr");
+
+			sidoMap.put("I10_SQA_REA","kged.sje.go.kr");
+
+			sidoMap.put("N10_CSO_REA","edurecruit.cne.go.kr");
+
+			sidoMap.put("M10_SQA_REA","kged.cbe.go.kr");
+
+			sidoMap.put("R10_CSO_REA","edurecruit.gbe.kr");
+
+			sidoMap.put("Q10_SQA_REA","kged.jne.go.kr");
+
+			sidoMap.put("D10_HES_REA","hdu.dge.go.kr");
+
+			sidoMap.put("H10_HES_REA","hdu.use.go.kr");
+
+			sidoMap.put("B10_PAS_REA","homedu.sen.go.kr");
+
+			sidoMap.put("B10_SCS_REA","hakwon.sen.go.kr");
+
+			sidoMap.put("P10_HES_REA","hdu.jbe.go.kr");
+
+			sidoMap.put("F10_PAS_REA","homedu.gen.go.kr");
+
+			sidoMap.put("F10_SCS_REA","hakwon.gen.go.kr");
+
+			sidoMap.put("T10_HES_REA","hdu.jje.go.kr");
+
+			sidoMap.put("J10_PAS_REA","homedu.goe.go.kr");
+
+			sidoMap.put("J10_SCS_REA","hakwon.goe.go.kr");
+
+			sidoMap.put("N10_PAS_REA","homedu.cne.go.kr");
+
+			sidoMap.put("N10_SCS_REA","hakwon.cne.go.kr");
+
+			sidoMap.put("R10_PAS_REA","homedu.gbe.kr");
+
+			sidoMap.put("R10_SCS_REA","hakwon.gbe.kr");
+
+			sidoMap.put("D10_STS_REA","stu.dge.go.kr");
+
+			sidoMap.put("D10_EDR_REA","eduro.dge.go.kr");
+
+			sidoMap.put("D10_SPR_REA","par.dge.go.kr");
+
+			sidoMap.put("H10_STS_REA","stu.use.go.kr");
+
+			sidoMap.put("H10_EDR_REA","eduro.use.go.kr");
+
+			sidoMap.put("H10_SPR_REA","par.use.go.kr");
+
+			sidoMap.put("P10_STS_REA","stu.jbe.go.kr");
+
+			sidoMap.put("P10_EDR_REA","eduro.jbe.go.kr");
+
+			sidoMap.put("E10_CSO_REA","edurecruit.ice.go.kr");
+
+			sidoMap.put("A00_PAS_REA","www.neis.go.kr");
+
+			sidoMap.put("P10_SPR_REA","par.jbe.go.kr");
+
+			sidoMap.put("T10_STS_REA","stu.jje.go.kr");
+
+			sidoMap.put("T10_EDR_REA","eduro.jje.go.kr");
+
+			sidoMap.put("D10_SQA_REA","kged.dge.go.kr");
+
+			sidoMap.put("I10_CSO_REA","edurecruit.sje.go.kr");
+
+			sidoMap.put("T10_SPR_REA","par.jje.go.kr");
+
+			sidoMap.put("H10_SQA_REA","kged.use.go.kr");
+
+			sidoMap.put("M10_CSO_REA","edurecruit.cbe.go.kr");
+
+			sidoMap.put("Q10_CSO_REA","edurecruit.jne.go.kr");
+
+
+	function go_MenuLink(url){
+		var domain_code = "B10" == null ? "A00" : "B10";
+		var biz_type = "STS";
+
+		var domainKey = domain_code + "_" + biz_type + "_" + "REA";
+		go_url = "http://" + sidoMap.get(domainKey) + "/edusys.jsp?page=" + url;
+
+		var f = document.paramForm;
+		f.action = go_url;
+		f.submit();
+	}
+
+</script>
+
+
+	<div id="neo_footer">
+		<div class="neo_footer_wrap">
+			<div class="neo_foot_con01">
+				<ul class="neo_partner">
+					<li><a href="http://www.moe.go.kr/" title="교육부[새창열림]" target="_blank"><img src="../images/pas/neo_f_btn_moe.png" alt="교육부" /></a></li>
+					<li><a href="http://www.keris.or.kr/" title="한국교육학술정보원[새창열림]" target="_blank"><img src="../images/pas/neo_f_btn_keris.png" alt="한국교육학술정보원" /></a></li>
+				</ul>
+			</div>
+			<div class="neo_foot_con02">
+				<ul class="neo_etc_nav">
+					<li><a href="javascript:goLink('pas_mms_nv10_001.do')">이용약관</a></li>
+					<li><a href="javascript:goLink('pas_mms_nv17_001.do')"><strong>개인정보처리방침</strong></a></li>
+					<li><a href="javascript:goLink('pas_mms_nv11_001.do')">이메일 무단수집거부</a></li>
+					<li><a href="javascript:goLink('pas_mms_nv12_001.do')">저작권보호정책</a></li>
+					<li><a href="" onclick="javascript:openRemote(); return false;" title="원격지원서비스">원격지원서비스</a></li>
+
+
+	
+					<li><a href="javascript:go_MenuLink('sts_m41700')">사이트맵</a></li>
+	
+	
+
+
+
+				</ul>
+				<address>Copyright (c) Ministry of Education. All Rights Reserved.</address>
+			</div>
+            <div class="neo_foot_con03">
+            	<a href="http://www.kwacc.or.kr/CertificationSite/WA/List" title="한국웹접근성평가센터 인증현황 바로가기_새창" target="blank">
+            		<img src="../images/pas/neo_f_btn_kiwac.jpg" alt="국가공인 웹 접근성 품질인증마크" style="width:86px;float:right;"/>
+            	</a>
+            </div>
+		</div>
+	</div>
+
+			
+			
+
+		
+
+
+
+</div>
+</body>
+</html>
+
+
+	
